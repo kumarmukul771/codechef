@@ -9,7 +9,6 @@ class dbHandler {
     //Connect to database
     $this->con = $db->connect();
     //Select "friends" collection, already defined in config.php
-    $this->col = new MongoCollection($this->con, DB_COLLECTION);
   }
 
   //Get All Friends

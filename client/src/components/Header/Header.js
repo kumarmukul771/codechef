@@ -37,55 +37,55 @@ class Header extends Component {
     this.props.addTag(data.value.pop());
   };
 
-  data = async () => {
-    let res = await axios.get("http://localhost:8081/api/problem");
+  // data = async () => {
+  //   let res = await axios.get("http://localhost:8081/api/problem");
 
-    console.log(res);
-    // return;
+  //   console.log(res);
+  //   // return;
 
-    const AuthStr = "Bearer " + "ac469bffd2922b3139f9ca3d67798de686df039e";
-    let v = 0;
+  //   const AuthStr = "Bearer " + "ce7bd250e750db578ea8b1335a838defb6b5911e";
+  //   let v = 245;
 
-    var tt = setInterval(async () => {
-      for (let i = v; i <= v + 30; i++) {
-        some(i);
-        console.log("Going for document", i);
-        try {
-          const response = await axios.get(
-            "https://api.codechef.com/contests/PRACTICE/problems/" +
-              res.data[i].problemCode,
-            {
-              headers: { Authorization: AuthStr },
-            }
-          );
+  //   var tt = setInterval(async () => {
+  //     for (let i = v; i <= v + 30; i++) {
+  //       some(i);
+  //       console.log("Going for document", i);
+  //       try {
+  //         const response = await axios.get(
+  //           "https://api.codechef.com/contests/PRACTICE/problems/" +
+  //             res.data[i].problemCode,
+  //           {
+  //             headers: { Authorization: AuthStr },
+  //           }
+  //         );
 
-          let body = response.data.result.data.content;
-          body = { ...body, accuracy: res.data[i].accuracy };
+  //         let body = response.data.result.data.content;
+  //         body = { ...body, accuracy: res.data[i].accuracy };
 
-          console.log("Trying to send", body);
+  //         console.log("Trying to send", body);
 
-          let resp = await axios.post(
-            "http://localhost:8081/api/problem/hard",
-            body
-          );
-          console.log("Successfully done", resp);
-          console.log("Done", i);
-        } catch (err) {
-          console.log(i);
-        }
-      }
-      v += 31;
-    }, 305000);
+  //         let resp = await axios.post(
+  //           "http://localhost:8081/api/problem/hard",
+  //           body
+  //         );
+  //         console.log("Successfully done", resp);
+  //         console.log("Done", i);
+  //       } catch (err) {
+  //         console.log(i);
+  //       }
+  //     }
+  //     v += 31;
+  //   }, 305000);
 
-    const some = (i) => {
-      if (i == 300) clearInterval(tt);
-    };
-  };
+  //   const some = (i) => {
+  //     if (i == 3000) clearInterval(tt);
+  //   };
+  // };
 
   applyTags = () => {
-    // this.props.onAddProblem();
-    //   this.props.history.push("tagDetail");
-    this.data();
+    this.props.onAddProblem();
+      this.props.history.push("tagDetail");
+    // this.data();
     
   };
 

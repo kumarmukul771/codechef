@@ -57,7 +57,10 @@ class Login extends React.Component {
           usernameOrEmail: email,
           password,
         };
-        const res = await Axios.post("https://powerful-coast-07208.herokuapp.com/api/login", data);
+        const res = await Axios.post(
+          "https://powerful-coast-07208.herokuapp.com/api/login",
+          data
+        );
 
         const expirationDate = new Date(new Date().getTime() + 3600 * 1000);
 
@@ -77,7 +80,10 @@ class Login extends React.Component {
         console.log(res);
       } catch (err) {
         console.log(err);
-        this.setState({ loading: false });
+        this.setState({
+          loading: false,
+          errors: [{ message: "Invalid email/username or password" }],
+        });
       }
     }
   };
@@ -94,7 +100,7 @@ class Login extends React.Component {
 
   render() {
     const { email, password, errors, loading } = this.state;
-    console.log(errors)
+    console.log(errors);
 
     return (
       <Grid textAlign="center" verticalAlign="middle" className="app">
@@ -110,7 +116,7 @@ class Login extends React.Component {
                 name="email"
                 icon="mail"
                 iconPosition="left"
-                placeholder="Email Address"
+                placeholder="Email Address/Username"
                 onChange={this.handleChange}
                 value={email}
                 type="email"

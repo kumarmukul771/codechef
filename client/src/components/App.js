@@ -163,6 +163,9 @@ class App extends Component {
             image="https://www.millcitypress.net/wp-content/uploads/2018/08/author-bios.jpg"
           />
         </Grid.Row>
+        <Grid.Row>
+          <Button color='blue' onClick={this.fetchAuthor}>More tags related to author</Button>
+        </Grid.Row>
 
         <Grid.Row>
           <Tag
@@ -170,6 +173,10 @@ class App extends Component {
             tags={concept}
             image="https://lh3.googleusercontent.com/fki3BYuTdt-mhkL2WcvejVck-Z2efzJ7k0ci81pJieu5aRMu_ZgOlvwJNvgSwx1ooUk"
           />
+        </Grid.Row>
+
+        <Grid.Row>
+          <Button color='blue' onClick={this.fetchConcept}>More tags related to concept</Button>
         </Grid.Row>
 
         {this.props.user.token === null ? null : (
@@ -184,7 +191,7 @@ class App extends Component {
 
         {this.props.user.token === null ? null : (
           <Grid.Row>
-            <Button onClick={this.fetchUserDefinedTags}>Mukul</Button>
+            <Button onClick={this.fetchUserDefinedTags} color='blue'>Show user defined tags</Button>
           </Grid.Row>
         )}
       </Grid>
