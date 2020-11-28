@@ -1,0 +1,13 @@
+.QuestionBody{
+    background-color: lightcoral;
+    width: 70%;
+}
+
+.Form{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.TagButton{
+    margin-bottom: 5px !important;
+}

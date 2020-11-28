@@ -1,0 +1,13 @@
+.Buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.Button {
+    margin: 10px;
+}
+
+.Header {
+    background-color: rgb(37, 31, 41);
+}

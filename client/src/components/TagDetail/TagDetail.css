@@ -1,0 +1,14 @@
+.Tags {
+    justify-content: center;
+}
+
+.GridCard{
+    justify-content: center !important;
+    align-items: center;
+    background-color: lightcoral;
+    /* margin: 0 auto; */
+}
+
+.message{
+    margin: 0 auto !important;
+}
