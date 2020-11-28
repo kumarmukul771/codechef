@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_","ns":"codechef.easy"}],"uuid":"c511d2cb4d29495c8fd3d2773a8ee724"}
